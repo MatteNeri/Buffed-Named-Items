@@ -12,6 +12,9 @@ local requiredMods = [
 
 ::ModBuffedNamedItems.HooksMod <- ::Hooks.register(::ModBuffedNamedItems.ID, ::ModBuffedNamedItems.Version, ::ModBuffedNamedItems.Name);
 ::ModBuffedNamedItems.HooksMod.require(requiredMods);
+::ModBuffedNamedItems.HooksMod.conflictWith(
+	"mod_legends"
+);
 
 local queueLoadOrder = [];
 foreach (requirement in requiredMods)
@@ -23,7 +26,11 @@ foreach (requirement in requiredMods)
 ::ModBuffedNamedItems.HooksMod.queue(queueLoadOrder, function()
 {
 	::ModBuffedNamedItems.Mod <- ::MSU.Class.Mod(::ModBuffedNamedItems.ID, ::ModBuffedNamedItems.Version, ::ModBuffedNamedItems.Name);
+	//::ModBuffedNamedItems.Mod.Debug.enable();
 
 	::include("scripts/BNI/msu.nut");
-	::include("scripts/BNI/named_weapons.nut");
+	::include("scripts/BNI/named_weapon.nut");
+	::include("scripts/BNI/named_armor.nut");
+	::include("scripts/BNI/named_shield.nut");
+	::include("scripts/BNI/named_helmet.nut");
 })
