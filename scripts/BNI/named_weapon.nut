@@ -1,6 +1,6 @@
 
 
-::ModBuffedNamedItems.HooksMod.hookTree("scripts/items/weapons/named/named_weapon", function(q) {
+::ModBuffedNamedItems.HooksMod.hook("scripts/items/weapons/named/named_weapon", function(q) {
 
 	q.randomizeValues = @() function()
 	{

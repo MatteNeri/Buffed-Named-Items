@@ -1,5 +1,5 @@
 
-::ModBuffedNamedItems.HooksMod.hookTree("scripts/items/helmets/named/named_helmet", function(q) {
+::ModBuffedNamedItems.HooksMod.hook("scripts/items/helmets/named/named_helmet", function(q) {
 	q.randomizeValues = @() function()
 	{
 		local min_c = ::ModBuffedNamedItems.Mod.ModSettings.getSetting(BNI_HELMET_ENUM.MIN_CONDITION).getValue();

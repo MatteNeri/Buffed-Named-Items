@@ -4,8 +4,8 @@ enum BNI_WEAPON_ENUM {
 	MAX_CONDITION = "MAX_CONDITION",
 	MIN_AMMO = "MIN_AMMO",
 	MAX_AMMO = "MAX_AMMO",
-	MIN_DAMAGE = "MIN_AMMO",
-	MIN_DAMAGE = "MIN_AMMO",
+	MIN_DAMAGE = "MIN_DAMAGE",
+	MAX_DAMAGE = "MAX_DAMAGE",
 	MIN_ARMOR = "MIN_ARMOR",
 	MAX_ARMOR = "MAX_ARMOR",
 	MIN_HC = "MIN_HC",
@@ -63,8 +63,8 @@ weaponsPage.addRangeSetting(BNI_WEAPON_ENUM.MIN_CONDITION, 150, 140, 190, 5, "Ma
 weaponsPage.addRangeSetting(BNI_WEAPON_ENUM.MIN_AMMO, 2, 1, 3, 1, "Min Additional Ammo", "Minimum additional ammo for throwing weapons (Vanilla: 1).");
 weaponsPage.addRangeSetting(BNI_WEAPON_ENUM.MAX_AMMO, 4, 3, 6, 1, "Max Additional Ammo", "Maximum additional ammo for throwing weapons (Vanilla: 3).");
 
-weaponsPage.addRangeSetting(BNI_WEAPON_ENUM.MIN_AMMO, 115, 110, 130, 1, "Min Damage %", "Minimum damage multiplier (Vanilla: 110%).");
-weaponsPage.addRangeSetting(BNI_WEAPON_ENUM.MAX_AMMO, 133, 130, 150, 1, "Max Damage %", "Maximum damage multiplier (Vanilla: 130%).");
+weaponsPage.addRangeSetting(BNI_WEAPON_ENUM.MIN_DAMAGE, 115, 110, 130, 1, "Min Damage %", "Minimum damage multiplier (Vanilla: 110%).");
+weaponsPage.addRangeSetting(BNI_WEAPON_ENUM.MAX_DAMAGE, 133, 130, 150, 1, "Max Damage %", "Maximum damage multiplier (Vanilla: 130%).");
 
 weaponsPage.addRangeSetting(BNI_WEAPON_ENUM.MIN_ARMOR, 15, 10, 30, 1, "Min Armor Damage %", "Minimum additional armor damage (Vanilla: 10%).");
 weaponsPage.addRangeSetting(BNI_WEAPON_ENUM.MAX_ARMOR, 30, 30, 50, 1, "Max Armor Damage %", "Maximum additional armor damage (Vanilla: 30%).");
@@ -123,3 +123,10 @@ shieldPage.addRangeSetting(BNI_SHIELD_ENUM.MAX_MD, 150, 140, 160, 1, "Max Melee 
 
 shieldPage.addRangeSetting(BNI_SHIELD_ENUM.MIN_RD, 130, 120, 160, 1, "Min Range Defense %", "Minimum range defense multiplier (Vanilla: 120%).");
 shieldPage.addRangeSetting(BNI_SHIELD_ENUM.MAX_RD, 150, 160, 200, 1, "Max Range Defense %", "Maximum range defense multiplier (Vanilla: 140%).");
+
+
+local allSettings = ::ModBuffedNamedItems.Mod.ModSettings.getAllElementsAsArray();
+foreach (element in allSettings)
+{
+	element.Data.NewCampaign <- true;
+}

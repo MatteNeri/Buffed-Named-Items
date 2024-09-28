@@ -16,7 +16,7 @@ local requiredMods = [
 	"mod_legends"
 );
 
-local queueLoadOrder = [];
+local queueLoadOrder = [">mod_reforged"];
 foreach (requirement in requiredMods)
 {
 	local idx = requirement.find(" ");

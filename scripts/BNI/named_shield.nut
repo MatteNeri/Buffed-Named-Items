@@ -1,5 +1,5 @@
 
-::ModBuffedNamedItems.HooksMod.hookTree("scripts/items/shields/named/named_shield", function(q) {
+::ModBuffedNamedItems.HooksMod.hook("scripts/items/shields/named/named_shield", function(q) {
 	q.randomizeValues = @() function()
 	{
 		local available = [];

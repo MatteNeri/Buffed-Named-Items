@@ -1,4 +1,4 @@
-::ModBuffedNamedItems.HooksMod.hookTree("scripts/items/armor/named/named_armor", function(q) {
+::ModBuffedNamedItems.HooksMod.hook("scripts/items/armor/named/named_armor", function(q) {
 	q.randomizeValues = @() function()
 	{
 		local min_c = ::ModBuffedNamedItems.Mod.ModSettings.getSetting(BNI_ARMOR_ENUM.MIN_CONDITION).getValue();
